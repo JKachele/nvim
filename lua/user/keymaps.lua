@@ -25,11 +25,9 @@ keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
-keymap("n", "<leader>e", ":Lex 30<cr>", opts)
-
 -- Save and Quit
-keymap("n", "<C-s>", ":w<CR>", opts)
-keymap("i", "<C-s>", "<ESC>:w<CR>a", opts)
+keymap("n", "<C-s>", ":wa<CR>", opts)
+keymap("i", "<C-s>", "<ESC>:wa<CR>a", opts)
 keymap("n", "<C-x>", ":qa<CR>", opts)
 keymap("n", "<C-q>", ":q<CR>", opts)
 
@@ -42,8 +40,10 @@ keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 -- Navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
+keymap("n", "<S-q>", ":Bdelete<CR>", opts)
 
 -- Visual --
+keymap("n", "<A-v>", "<C-v>", opts)
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
@@ -54,8 +54,8 @@ keymap("v", "<A-k>", ":m .-2<CR>==", opts)
 keymap("v", "p", '"_dP', opts)
 
 --PageUp/PageDown
-keymap("n", "<PageUp>", "<C-b>", opts)
-keymap("n", "<PageDown>", "<C-f>", opts)
+keymap("n", "<PageUp>", "<C-u>", opts)
+keymap("n", "<PageDown>", "<C-d>", opts)
 
 -- Visual Block --
 -- Move text up and down
@@ -65,8 +65,11 @@ keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
 -- Terminal --
--- Better terminal navigation
-keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
-keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
-keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
-keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
+keymap("n", "lg", ":lua _LAZYGIT_TOGGLE()<CR>", opts)
+
+-- Telescope --
+keymap("n", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
+keymap("n", "<c-g>", "<cmd>Telescope live_grep<cr>", opts)
+
+-- Nvimtree
+keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
