@@ -268,6 +268,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/jkachele/.local/share/nvim/site/pack/packer/start/vim-be-good",
     url = "https://github.com/ThePrimeagen/vim-be-good"
+  },
+  ["which-key.nvim"] = {
+    loaded = true,
+    path = "/home/jkachele/.local/share/nvim/site/pack/packer/start/which-key.nvim",
+    url = "https://github.com/folke/which-key.nvim"
   }
 }
 
