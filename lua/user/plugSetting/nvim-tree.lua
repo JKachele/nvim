@@ -41,8 +41,8 @@ nvim_tree.setup {
     hijack_cursor = true,
 
     update_focused_file = {
-        enable = true,
-        update_cwd = true,
+        enable = false,
+        update_cwd = false,
     },
     renderer = {
         root_folder_modifier = ":t",

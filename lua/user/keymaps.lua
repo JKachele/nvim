@@ -76,6 +76,7 @@ keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
 keymap("n", "<leader>g", ":Gitsigns preview_hunk<cr>", opts)
 
 -- Tasks Cmake --
+keymap("n", "cc", ":Task start cmake configure<cr>", opts)
 keymap("n", "cg", ":Task set_module_param cmake target<cr>", opts)
 keymap("n", "cr", ":Task start cmake run<cr>", opts)
 keymap("n", "cd", ":Task start cmake debug<cr>", opts)

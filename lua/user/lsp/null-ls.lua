@@ -14,10 +14,10 @@ null_ls.setup({
 		formatting.prettier.with({ extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" } }),
 		formatting.black.with({ extra_args = { "--fast" } }),
 		formatting.stylua,
-        formatting.clang_format.with({ extra_args = { "-style='{IndentWidth:","4}'"}}),
+        formatting.clang_format.with({ args = { "-style='{IndentWidth: 4}'", "-i", "$FILENAME"}}),
         formatting.cmake_format,
         diagnostics.cmake_lint,
-        diagnostics.cpplint.with({ extra_args = { "--filter=-legal/copyright" } }),
+        diagnostics.cpplint.with({ args = { "--filter=-legal,-build/include_subdir", "$FILENAME" } }),
         diagnostics.flake8
 	},
 })
