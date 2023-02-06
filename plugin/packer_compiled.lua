@@ -174,6 +174,11 @@ _G.packer_plugins = {
     path = "/home/jkachele/.local/share/nvim/site/pack/packer/start/moonfly",
     url = "https://github.com/bluz71/vim-moonfly-colors"
   },
+  ["neovim-tasks"] = {
+    loaded = true,
+    path = "/home/jkachele/.local/share/nvim/site/pack/packer/start/neovim-tasks",
+    url = "https://github.com/Shatur/neovim-tasks"
+  },
   ["null-ls.nvim"] = {
     loaded = true,
     path = "/home/jkachele/.local/share/nvim/site/pack/packer/start/null-ls.nvim",

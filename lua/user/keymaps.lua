@@ -69,5 +69,13 @@ keymap("n", "lg", ":lua _LAZYGIT_TOGGLE()<CR>", opts)
 keymap("n", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
 keymap("n", "<c-g>", "<cmd>Telescope live_grep<cr>", opts)
 
--- Nvimtree
+-- Nvimtree --
 keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
+
+-- GitLine --
+keymap("n", "<leader>g", ":Gitsigns preview_hunk<cr>", opts)
+
+-- Tasks Cmake --
+keymap("n", "cg", ":Task set_module_param cmake target<cr>", opts)
+keymap("n", "cr", ":Task start cmake run<cr>", opts)
+keymap("n", "cd", ":Task start cmake debug<cr>", opts)
