@@ -75,6 +75,18 @@ keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
 -- GitLine --
 keymap("n", "<leader>g", ":Gitsigns preview_hunk<cr>", opts)
 
+-- lsp_lines --
+vim.keymap.set(
+"",
+"<Leader>l",
+require("lsp_lines").toggle,
+{ desc = "Toggle lsp_lines" }
+)
+
+-- Templates --
+-- keymap("n", "<A-a>c", ":Template cppMain<cr>", opts)
+-- keymap("n", "<A-a>p", ":Template pyMain<cr>", opts)
+
 -- Tasks Cmake --
 keymap("n", "cc", ":Task start cmake configure<cr>", opts)
 keymap("n", "cg", ":Task set_module_param cmake target<cr>", opts)

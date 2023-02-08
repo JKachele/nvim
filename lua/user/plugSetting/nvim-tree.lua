@@ -39,10 +39,11 @@ nvim_tree.setup {
     disable_netrw = true,
     hijack_netrw = true,
     hijack_cursor = true,
-
+    sync_root_with_cwd = true,
+    respect_buf_cwd = true,
     update_focused_file = {
-        enable = false,
-        update_cwd = false,
+        enable = true,
+        update_root = false
     },
     renderer = {
         root_folder_modifier = ":t",

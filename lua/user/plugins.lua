@@ -56,9 +56,10 @@ return packer.startup(function(use)
     use 'lewis6991/impatient.nvim'
     use "lukas-reineke/indent-blankline.nvim"
     use 'goolord/alpha-nvim'
-    use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
-    use "folke/which-key.nvim"
+    -- use "folke/which-key.nvim"
     use "Shatur/neovim-tasks"
+    use 'eandrju/cellular-automaton.nvim'
+    use "glepnir/template.nvim"
 
     -- Colorschemes
     -- use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
@@ -86,6 +87,12 @@ return packer.startup(function(use)
     use "williamboman/mason.nvim"
     use "williamboman/mason-lspconfig.nvim"
     use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
+    use({
+        "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+        config = function()
+            require("lsp_lines").setup()
+        end,
+    })
 
     -- Telescope
     use "nvim-telescope/telescope.nvim"
@@ -102,6 +109,9 @@ return packer.startup(function(use)
 
     -- Git
     use "lewis6991/gitsigns.nvim"
+
+    -- Debug Adapter Protocol
+    use 'mfussenegger/nvim-dap'
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
