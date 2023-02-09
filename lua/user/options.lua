@@ -25,6 +25,7 @@ local options = {
     shiftwidth = 4,                          -- the number of spaces inserted for each indentation
     tabstop = 4,                             -- insert 2 spaces for a tab
     cursorline = true,                       -- highlight the current line
+    -- colorcolumn=81,                          -- Highlight the 81st column
     number = true,                           -- set numbered lines
     relativenumber = true,                   -- set relative numbered lines
     numberwidth = 4,                         -- set number column width to 2 {default 4}
@@ -45,3 +46,4 @@ end
 vim.cmd "set whichwrap+=<,>,[,],h,l"
 vim.cmd [[set iskeyword+=-]]
 vim.cmd [[set formatoptions-=cro]] -- TODO: this doesn't seem to work
+-- vim.cmd [[set colorcolumn=81]]

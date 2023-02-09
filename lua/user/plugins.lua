@@ -46,19 +46,19 @@ return packer.startup(function(use)
     use "nvim-lua/plenary.nvim"       -- Useful lua functions used ny lots of plugins
     use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
     use "numToStr/Comment.nvim" -- Easily comment stuff
-    use 'kyazdani42/nvim-web-devicons'
-    use 'kyazdani42/nvim-tree.lua'
+    use "kyazdani42/nvim-web-devicons"
+    use "kyazdani42/nvim-tree.lua"
     use "akinsho/bufferline.nvim"
     use "moll/vim-bbye"
-    use 'nvim-lualine/lualine.nvim'
+    use "nvim-lualine/lualine.nvim"
     use "akinsho/toggleterm.nvim"
     use "ahmedkhalf/project.nvim"
-    use 'lewis6991/impatient.nvim'
+    use "lewis6991/impatient.nvim"
     use "lukas-reineke/indent-blankline.nvim"
-    use 'goolord/alpha-nvim'
+    use "goolord/alpha-nvim"
     -- use "folke/which-key.nvim"
     use "Shatur/neovim-tasks"
-    use 'eandrju/cellular-automaton.nvim'
+    use "eandrju/cellular-automaton.nvim"
     use "glepnir/template.nvim"
 
     -- Colorschemes
@@ -74,7 +74,7 @@ return packer.startup(function(use)
     use "hrsh7th/cmp-path" -- path completions
     use "hrsh7th/cmp-cmdline" -- cmdline completions
     use "saadparwaiz1/cmp_luasnip" -- snippet completions
-    use {'tzachar/cmp-tabnine', run='./install.sh'} -- Tabnine completions
+    use {"tzachar/cmp-tabnine", run="./install.sh"} -- Tabnine completions
     use "hrsh7th/cmp-nvim-lua"
     use "hrsh7th/cmp-nvim-lsp"
 
@@ -96,7 +96,7 @@ return packer.startup(function(use)
 
     -- Telescope
     use "nvim-telescope/telescope.nvim"
-    use 'nvim-telescope/telescope-media-files.nvim'
+    use "nvim-telescope/telescope-media-files.nvim"
 
     -- Treesitter
     use {
@@ -105,13 +105,13 @@ return packer.startup(function(use)
     }
     use "p00f/nvim-ts-rainbow"
     use "nvim-treesitter/playground"
-    use 'JoosepAlviste/nvim-ts-context-commentstring'
+    use "JoosepAlviste/nvim-ts-context-commentstring"
 
     -- Git
     use "lewis6991/gitsigns.nvim"
 
     -- Debug Adapter Protocol
-    use 'mfussenegger/nvim-dap'
+    use "mfussenegger/nvim-dap"
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins

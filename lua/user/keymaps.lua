@@ -44,6 +44,9 @@ keymap("n", "<S-q>", ":Bdelete<CR>", opts)
 keymap("n", "<enter>", "o<esc>", opts)
 keymap("n", "<S-enter>", "O<esc>", opts)
 
+-- Refactor Variable
+keymap("n", "rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
+
 -- Visual --
 keymap("n", "<A-v>", "<C-v>", opts)
 -- Stay in indent mode
@@ -80,19 +83,15 @@ keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
 keymap("n", "<leader>g", ":Gitsigns preview_hunk<cr>", opts)
 
 -- lsp_lines --
-vim.keymap.set(
-"",
-"<Leader>l",
-require("lsp_lines").toggle,
-{ desc = "Toggle lsp_lines" }
-)
+vim.keymap.set("", "<Leader>l", require("lsp_lines").toggle, { desc = "Toggle lsp_lines" })
 
 -- Templates --
--- keymap("n", "<A-a>c", ":Template cppMain<cr>", opts)
--- keymap("n", "<A-a>p", ":Template pyMain<cr>", opts)
+keymap("n", "<A-c>", ":Template cppMain<cr>", opts)
+keymap("n", "<A-p>", ":Template pyMain<cr>", opts)
 
 -- Tasks Cmake --
 keymap("n", "cc", ":Task start cmake configure<cr>", opts)
 keymap("n", "cg", ":Task set_module_param cmake target<cr>", opts)
-keymap("n", "cr", ":Task start cmake run<cr>", opts)
+keymap("n", "cr", ":copen 4<Bar> Task start cmake run<cr>", opts)
 keymap("n", "cd", ":Task start cmake debug<cr>", opts)
+keymap("n", "cx", "<C-w>l<C-w>j:q<cr>", opts)
