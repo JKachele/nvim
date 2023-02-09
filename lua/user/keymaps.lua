@@ -40,6 +40,10 @@ keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
 keymap("n", "<S-q>", ":Bdelete<CR>", opts)
 
+-- Add new line in normal mode
+keymap("n", "<enter>", "o<esc>", opts)
+keymap("n", "<S-enter>", "O<esc>", opts)
+
 -- Visual --
 keymap("n", "<A-v>", "<C-v>", opts)
 -- Stay in indent mode
