@@ -75,6 +75,7 @@ keymap("n", "lg", ":lua _LAZYGIT_TOGGLE()<CR>", opts)
 -- Telescope --
 keymap("n", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
 keymap("n", "<c-g>", "<cmd>Telescope live_grep<cr>", opts)
+keymap("n", "<leader>tk", "<cmd>Telescope keymaps<cr>", opts)
 
 -- Nvimtree --
 keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
@@ -90,8 +91,18 @@ keymap("n", "<A-c>", ":Template cppMain<cr>", opts)
 keymap("n", "<A-p>", ":Template pyMain<cr>", opts)
 
 -- Tasks Cmake --
-keymap("n", "cc", ":Task start cmake configure<cr>", opts)
+keymap("n", "cs", ":Task start cmake configure<cr>", opts)
 keymap("n", "cg", ":Task set_module_param cmake target<cr>", opts)
-keymap("n", "cr", ":copen 4<Bar> Task start cmake run<cr>", opts)
+keymap("n", "cr", "<C-w>l:copen 4<Bar> Task start cmake run<cr>", opts)
 keymap("n", "cd", ":Task start cmake debug<cr>", opts)
 keymap("n", "cx", "<C-w>l<C-w>j:q<cr>", opts)
+
+-- Debugging --
+keymap("n", "<F5>", ":lua require'dap'.continue()<cr>", opts)
+keymap("n", "<F7>", ":lua require'dap'.step_into()<cr>", opts)
+keymap("n", "<F8>", ":lua require'dap'.step_over()<cr>", opts)
+keymap("n", "<F9>", ":lua require'dap'.step_out()<cr>", opts)
+keymap("n", "<leader>b", ":lua require'dap'.toggle_breakpoint()<cr>", opts)
+keymap("n", "<leader>B", ":lua require'dap'.toggle_breakpoint(vim.fn.input('Breakpoint condition: '))<cr>", opts)
+keymap("n", "<leader>lp", ":lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<cr>", opts)
+keymap("n", "<leader>dr", ":lua require'dap'.repl.open()<cr>", opts)

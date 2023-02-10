@@ -112,6 +112,10 @@ return packer.startup(function(use)
 
     -- Debug Adapter Protocol
     use "mfussenegger/nvim-dap"
+    use "rcarriga/nvim-dap-ui"
+    use "nvim-telescope/telescope-dap.nvim"
+    use "theHamsta/nvim-dap-virtual-text"
+    use "jay-babu/mason-nvim-dap.nvim"
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
