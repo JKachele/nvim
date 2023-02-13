@@ -250,10 +250,10 @@ _G.packer_plugins = {
     path = "/home/jkachele/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/kyazdani42/nvim-web-devicons"
   },
-  ["overlength.vim"] = {
+  ["overlength.nvim"] = {
     loaded = true,
-    path = "/home/jkachele/.local/share/nvim/site/pack/packer/start/overlength.vim",
-    url = "https://github.com/tjdevries/overlength.vim"
+    path = "/home/jkachele/.local/share/nvim/site/pack/packer/start/overlength.nvim",
+    url = "https://github.com/lcheylus/overlength.nvim"
   },
   ["packer.nvim"] = {
     loaded = true,

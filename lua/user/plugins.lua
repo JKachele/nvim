@@ -59,7 +59,9 @@ return packer.startup(function(use)
     use "Shatur/neovim-tasks"
     use "eandrju/cellular-automaton.nvim"
     use "glepnir/template.nvim"
-    use "tjdevries/overlength.vim"
+    -- use "tjdevries/overlength.vim"
+    use "lcheylus/overlength.nvim"
+    require("overlength").setup({ bg='#592929' })
 
     -- Colorschemes
     -- use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
