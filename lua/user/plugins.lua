@@ -64,7 +64,8 @@ lazy.setup({
 
     -- LSP
     "neovim/nvim-lspconfig", -- enable LSP
-    "williamboman/mason.nvim",
+    {"williamboman/mason.nvim",
+    build = ":MasonUpdate"},
     "williamboman/mason-lspconfig.nvim",
     "jose-elias-alvarez/null-ls.nvim", -- for formatters and linters
     {
