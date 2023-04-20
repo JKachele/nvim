@@ -1,4 +1,9 @@
-require('template').setup({
+local status_ok, template = pcall(require, "template")
+if not status_ok then
+	return
+end
+
+template.setup({
     temp_dir = "~/.config/nvim/template",
     author = "Justin Kachele",
     email = "justin@kachele.com",

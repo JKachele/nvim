@@ -1,5 +1,10 @@
+local status_ok, tasks = pcall(require, "tasks")
+if not status_ok then
+	return
+end
+
 local Path = require('plenary.path')
-require('tasks').setup({
+tasks.setup({
     default_params = { -- Default module parameters with which `neovim.json` will be created.
         cmake = {
             cmd = 'cmake', -- CMake executable to use, can be changed using `:Task set_module_param cmake cmd`.
