@@ -15,7 +15,7 @@ local setup = {
         -- No actual key bindings are created
         presets = {
             operators = false, -- adds help for operators like d, y, ... and registers them for motion / text object completion
-            motions = false, -- adds help for motions
+            motions = true, -- adds help for motions
             text_objects = false, -- help for text objects triggered after entering an operator
             windows = true, -- default bindings on <c-w>
             nav = true, -- misc bindings to work with windows
@@ -100,7 +100,6 @@ local mappings = {
     ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
     ["w"] = { "<cmd>w!<CR>", "Save" },
     ["q"] = { "<cmd>q!<CR>", "Quit" },
-    ["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
     ["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
     ["f"] = {
         "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
@@ -108,11 +107,21 @@ local mappings = {
     },
     ["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
     ["P"] = { "<cmd>Telescope projects<cr>", "Projects" },
+    ["x"] = {"<cmd>source ~/.config/nvim/init.lua<cr>", "Reload Neovim Config"},
+
+    c = {
+        name = "Cmake",
+        s = {"<cmd>Task start cmake configure<cr>", "Configure Cmake"},
+        g = {"<cmd>Task set_module_param cmake target<cr>", "Set CMake Target"},
+        r = {"<C-w>l:copen 4<Bar> Task start cmake run<cr>", "Run Cmake"},
+        d = {"<cmd>Task start cmake debug<cr>", "Debug"},
+        x = {"<C-w>l<C-w>j:q<cr>"}
+    },
 
     d = {
         name = "Debug",
         b = {"<cmd>lua require'dap'.toggle_breakpoint()<cr>", "Breakpoint"},
-        c = {"<cmd>lua require'dap'.continue()<cr", "Continue"},
+        c = {"<cmd>lua require'dap'.continue()<cr>", "Continue"},
         i = {"<cmd>lua require'dap'.step_into()<cr>", "Step Into"},
         l = {"<cmd>lua require'dap'.run_last()<cr>", "Run last"},
         o = {"<cmd>lua require'dap'.step_over()<cr>", "Step Over"},
@@ -120,15 +129,6 @@ local mappings = {
         r = {"<cmd>lua require'dap'.repl.open()<cr>", "Repl"},
         u = {"<cmd>lua require'dapui'.toggle()<cr>", "UI"},
         x = {"<cmd>lua require'dap'.terminate()<cr>", "Terminate"}
-    },
-
-    p = {
-        name = "Packer",
-        c = { "<cmd>PackerCompile<cr>", "Compile" },
-        i = { "<cmd>PackerInstall<cr>", "Install" },
-        s = { "<cmd>PackerSync<cr>", "Sync" },
-        S = { "<cmd>PackerStatus<cr>", "Status" },
-        u = { "<cmd>PackerUpdate<cr>", "Update" },
     },
 
     g = {
@@ -184,6 +184,13 @@ local mappings = {
             "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
             "Workspace Symbols",
         },
+        g = {
+            name = "Go To",
+            d = {"<cmd>lua vim.lsp.buf.declaration()<CR>", "Go To Declaration"},
+            D = {"<cmd>lua vim.lsp.buf.definition()<CR>", "Go To Definition"},
+            i = {"<cmd>lua vim.lsp.buf.implementation()<CR>", "Go To implementation"},
+            r = {"<cmd>lua vim.lsp.buf.references()<CR>", "Go To References"}
+        }
     },
     s = {
         name = "Search",

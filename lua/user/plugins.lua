@@ -98,4 +98,5 @@ lazy.setup({
     "nvim-telescope/telescope-dap.nvim",
     "theHamsta/nvim-dap-virtual-text",
     "jay-babu/mason-nvim-dap.nvim",-- Automatically set up your configuration after cloning packer.nvim
+    "mfussenegger/nvim-dap-python",
 })

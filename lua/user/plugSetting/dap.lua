@@ -98,6 +98,20 @@ dap.configurations.cpp = {
     },
 }
 
+require('dap-python').setup('~/.virtualenvs/debugpy/bin/python')
+
+dap.configurations.python = {
+    {
+        type = 'python';
+        request = 'launch';
+        name = "Launch file";
+        program = "${file}";
+        pythonPath = function()
+            return '/usr/bin/python'
+        end;
+    },
+}
+
 dap.configurations.c = dap.configurations.cpp
 dap.configurations.rust = dap.configurations.cpp
 
