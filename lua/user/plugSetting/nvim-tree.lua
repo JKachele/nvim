@@ -131,6 +131,7 @@ end
 
 
 nvim_tree.setup {
+    on_attach = on_attach,
     disable_netrw = true,
     hijack_netrw = true,
     hijack_cursor = true,
