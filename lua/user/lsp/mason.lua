@@ -4,7 +4,6 @@ local servers = {
     "jsonls",
     "clangd",
     "cmake",
-    "jdtls",
 }
 
 local settings = {
