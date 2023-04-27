@@ -103,7 +103,7 @@ local mappings = {
         g = {"<cmd>Task set_module_param cmake target<cr>", "Set CMake Target"},
         r = {"<C-w>l:copen 4<Bar> Task start cmake run<cr>", "Run Cmake"},
         d = {"<cmd>Task start cmake debug<cr>", "Debug"},
-        x = {"<C-w>l<C-w>j:q<cr>"}
+        x = {"<C-w>l<C-w>j:q<cr>", "Quit Cmake Window"}
     },
 
     d = {
