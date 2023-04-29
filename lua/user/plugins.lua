@@ -31,6 +31,7 @@ lazy.setup({
     "akinsho/bufferline.nvim",
     "moll/vim-bbye",
     "nvim-lualine/lualine.nvim",
+    "arkav/lualine-lsp-progress",
     "akinsho/toggleterm.nvim",
     "ahmedkhalf/project.nvim",
     "lewis6991/impatient.nvim",
