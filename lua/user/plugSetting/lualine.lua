@@ -45,15 +45,12 @@ local location = {
 	padding = 1,
 }
 
--- cool function for progress
--- local progressBar = function()
--- 	local current_line = vim.fn.line(".")
--- 	local total_lines = vim.fn.line("$")
--- 	local chars = { "__", "▁▁", "▂▂", "▃▃", "▄▄", "▅▅", "▆▆", "▇▇", "██" }
--- 	local line_ratio = current_line / total_lines
--- 	local index = math.ceil(line_ratio * #chars)
--- 	return chars[index]
--- end
+local progress = function()
+    local current_line = vim.fn.line(".")
+    local total_lines = vim.fn.line("$")
+    local percent = string.format("%2d%%%%", math.floor(current_line / total_lines * 100))
+    return string.format("%s %d/%d", percent, current_line, total_lines)
+end
 
 lualine.setup({
 	options = {
@@ -68,10 +65,9 @@ lualine.setup({
 		lualine_a = { "mode" },
 		lualine_b = { diagnostics },
 		lualine_c = { "lsp_progress" },
-		-- lualine_x = { "encoding", "fileformat", "filetype" },
 		lualine_x = { branch, diff, "encoding", filetype },
 		lualine_y = { location },
-		lualine_z = { "progress" },
+		lualine_z = { progress },
 	},
 	inactive_sections = {
 		lualine_a = {},
