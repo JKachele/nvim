@@ -4,6 +4,8 @@ local servers = {
     "jsonls",
     "clangd",
     "cmake",
+    "asm_lsp",
+    "cmake",
 }
 
 local settings = {

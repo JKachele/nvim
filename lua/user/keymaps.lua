@@ -24,10 +24,10 @@ keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
 -- Save and Quit
-keymap("n", "<C-s>", ":wa<CR>", opts)
-keymap("i", "<C-s>", "<ESC>:wa<CR>a", opts)
-keymap("n", "<C-x>", ":qa<CR>", opts)
-keymap("n", "<C-q>", ":q<CR>", opts)
+-- keymap("n", "<C-s>", ":wa<CR>", opts)
+-- keymap("i", "<C-s>", "<ESC>:wa<CR>a", opts)
+-- keymap("n", "<C-x>", ":qa<CR>", opts)
+-- keymap("n", "<C-q>", ":q<CR>", opts)
 
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize +2<CR>", opts)
