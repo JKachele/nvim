@@ -13,7 +13,7 @@ local config = {
         '-Dlog.protocol=true',
         '-Dlog.level=ALL',
         '-Xmx1g',
-        '-jar', '/home/jkachele/.local/share/nvim/mason/packages/jdtls/plugins/org.eclipse.equinox.launcher_1.6.400.v20210924-0641.jar',
+        '-jar', '/home/jkachele/.local/share/nvim/mason/packages/jdtls/plugins/org.eclipse.equinox.launcher_1.6.500.v20230622-2056.jar',
         '-configuration', '/home/jkachele/.local/share/nvim/mason/packages/jdtls/config_linux',
         '-data', workspace_dir,
         --'add-modules=ALL-SYSTEM',
@@ -35,6 +35,11 @@ local config = {
                     profile = "GoogleStyle",
                 },
             },
+            -- project = {
+            --     referencedLibraries = {
+            --         '~/.gradle/caches/modules-2/files-2.1/org.joml/joml/1.10.5/22566d58af70ad3d72308bab63b8339906deb649/joml-1.10.5.jar',
+            --     },
+            -- },
         },
     },
 }

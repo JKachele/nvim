@@ -23,11 +23,11 @@ keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
--- Save and Quit
--- keymap("n", "<C-s>", ":wa<CR>", opts)
--- keymap("i", "<C-s>", "<ESC>:wa<CR>a", opts)
--- keymap("n", "<C-x>", ":qa<CR>", opts)
--- keymap("n", "<C-q>", ":q<CR>", opts)
+-- Better line navigation
+keymap("n", "gh", "^", opts)
+keymap("n", "gl", "$", opts)
+keymap("v", "gh", "^", opts)
+keymap("v", "gl", "$", opts)
 
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize +2<CR>", opts)
@@ -39,6 +39,9 @@ keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
 keymap("n", "<S-q>", ":Bdelete<CR>", opts)
+
+-- No Highlight
+keymap("n", "<ESC>", ":noh<CR>", opts)
 
 -- Add new line in normal mode
 keymap("n", "<enter>", "o<esc>", opts)
@@ -65,10 +68,6 @@ keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
-
--- Templates --
-keymap("n", "<A-c>", ":Template cppMain<cr>", opts)
-keymap("n", "<A-p>", ":Template pyMain<cr>", opts)
 
 -- Debugging --
 keymap("n", "<F5>", ":lua require'dap'.continue()<cr>", opts)

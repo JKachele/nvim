@@ -10,6 +10,17 @@ nvim_web_devicons.setup{
             color = "#2a2aec",
             cterm_color = "20",
             name = "asm"
-        }
+        },
+        S = {
+            icon = "",
+            color = "#2a2aec",
+            cterm_color = "20",
+            name = "S"
+        },
+        ino = {
+            icon = "󰛤",
+            color = "#00979c",
+            name = "ino",
+        },
     };
 }

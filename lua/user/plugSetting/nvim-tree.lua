@@ -171,7 +171,7 @@ nvim_tree.setup {
     },
     diagnostics = {
         enable = true,
-        show_on_dirs = true,
+        show_on_dirs = false,
         icons = {
             hint = "",
             info = "",
@@ -181,6 +181,7 @@ nvim_tree.setup {
     },
     view = {
         width = 30,
+        -- adaptive_size = true,
         side = "left",
         mappings = {
             list = {

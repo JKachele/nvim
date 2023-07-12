@@ -39,8 +39,10 @@ lazy.setup({
     "goolord/alpha-nvim",
     "Shatur/neovim-tasks",
     "eandrju/cellular-automaton.nvim",
-    "glepnir/template.nvim",
+    "jkachele/vim-templates-java",
     "folke/which-key.nvim",
+    "m4xshen/hardtime.nvim",
+    { "iamcco/markdown-preview.nvim", build=function() vim.fn["mkdp#util#install"]() end },
 
     -- Colorschemes
     -- "lunarvim/colorschemes", -- A bunch of colorschemes you can try out
@@ -76,6 +78,7 @@ lazy.setup({
         end,
     },
     "mfussenegger/nvim-jdtls",
+    "simrat39/rust-tools.nvim",
 
     -- Telescope
     "nvim-telescope/telescope.nvim",
@@ -86,12 +89,12 @@ lazy.setup({
         "nvim-treesitter/nvim-treesitter",
         build = ":TSUpdate",
     },
-    "p00f/nvim-ts-rainbow",
-    "nvim-treesitter/playground",
-    "JoosepAlviste/nvim-ts-context-commentstring",
+    -- "p00f/nvim-ts-rainbow",
+    -- "nvim-treesitter/playground",
+    -- "JoosepAlviste/nvim-ts-context-commentstring",
 
     -- Git
-    "lewis6991/gitsigns.nvim",
+    -- "lewis6991/gitsigns.nvim",
 
     -- Debug Adapter Protocol
     "mfussenegger/nvim-dap",

@@ -8,13 +8,17 @@ local setup = {
         marks = true, -- shows a list of your marks on ' and `
         registers = true, -- shows your registers on " in NORMAL or <C-r> in INSERT mode
         spelling = {
-            enabled = true, -- enabling this will show WhichKey when pressing z= to select spelling suggestions
-            suggestions = 20, -- how many suggestions should be shown in the list?
+            -- enabling this will show WhichKey when pressing z= to select spelling suggestions
+            enabled = true,
+            -- how many suggestions should be shown in the list?
+            suggestions = 20,
         },
         -- the presets plugin, adds help for a bunch of default keybindings in Neovim
         -- No actual key bindings are created
         presets = {
-            operators = false, -- adds help for operators like d, y, ... and registers them for motion / text object completion
+            -- adds help for operators like d, y, ...
+            -- and registers them for motion / text object completion 
+            operators = false,
             motions = true, -- adds help for motions
             text_objects = false, -- help for text objects triggered after entering an operator
             windows = true, -- default bindings on <c-w>
@@ -34,7 +38,8 @@ local setup = {
         -- ["<tab>"] = "TAB",
     },
     icons = {
-        breadcrumb = "»", -- symbol used in the command line area that shows your active key combo
+        -- symbol used in the command line area that shows your active key combo
+        breadcrumb = "»",
         separator = "➜", -- symbol used between a key and it's label
         group = "+", -- symbol prepended to a group
     },
@@ -56,7 +61,8 @@ local setup = {
         align = "left", -- align columns left, center or right
     },
     ignore_missing = true, -- enable this to hide mappings for which you didn't specify a label
-    hidden = { "<silent>", "<cmd>", "<Cmd>", "<CR>", "call", "lua", "^:", "^ " }, -- hide mapping boilerplate
+    -- hide mapping boilerplate
+    hidden = { "<silent>", "<cmd>", "<Cmd>", "<CR>", "call", "lua", "^:", "^ " },
     show_help = true, -- show help message on the command line when the popup is visible
     triggers = "auto", -- automatically setup triggers
     -- triggers = {"<leader>"} -- or specify a list manually
@@ -142,29 +148,12 @@ local mappings = {
         },
     },
 
-    l = {
-        name = "LSP",
-        a = {"<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
-        d = {"<cmd>Telescope lsp_document_diagnostics<cr>", "Document Diagnostics"},
-        w = {"<cmd>Telescope lsp_workspace_diagnostics<cr>", "Workspace Diagnostics"},
-        f = {"<cmd>lua vim.lsp.buf.formatting()<cr>", "Format" },
-        i = {"<cmd>LspInfo<cr>", "Info" },
-        I = {"<cmd>LspInstallInfo<cr>", "Installer Info" },
-        j = {"<cmd>lua vim.lsp.diagnostic.goto_next()<CR>", "Next Diagnostic"},
-        k = {"<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>", "Prev Diagnostic"},
-        l = {"<cmd>lua require'lsp_lines'.toggle()<cr>", "Lsp Lines Toggle" },
-        q = {"<cmd>lua vim.lsp.diagnostic.set_loclist()<cr>", "Quickfix" },
-        r = {"<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
-        s = {"<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
-        S = {"<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", "Workspace Symbols"},
-        g = {
-            name = "Go To",
-            d = {"<cmd>lua vim.lsp.buf.declaration()<CR>", "Go To Declaration"},
-            D = {"<cmd>lua vim.lsp.buf.definition()<CR>", "Go To Definition"},
-            i = {"<cmd>lua vim.lsp.buf.implementation()<CR>", "Go To implementation"},
-            r = {"<cmd>lua vim.lsp.buf.references()<CR>", "Go To References"}
-        }
+    m = {
+        name = "Markdown preview",
+        p = {"<cmd>MarkdownPreview<cr>", "Start Preview"},
+        s = {"<cmd>MarkdownPreviewStop<cr>", "Stop Preview"}
     },
+
     s = {
         name = "Search",
         b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
@@ -178,14 +167,12 @@ local mappings = {
     },
 
     t = {
-        name = "Terminal",
-        n = { "<cmd>lua _NODE_TOGGLE()<cr>", "Node" },
-        u = { "<cmd>lua _NCDU_TOGGLE()<cr>", "NCDU" },
-        H = { "<cmd>lua _HTOP_TOGGLE()<cr>", "Htop" },
-        p = { "<cmd>lua _PYTHON_TOGGLE()<cr>", "Python" },
-        t = { "<cmd>ToggleTerm direction=float<cr>", "Float" },
-        h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
-        v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
+        name = "Template",
+        j = {
+            name = "Java",
+            c = {"<cmd>TemplateInit javaClass<cr>", "Java Class"},
+            m = {"<cmd>TemplateInit javaMain<cr>", "Java Main Class"},
+        },
     },
 }
 
@@ -205,47 +192,20 @@ which_key.setup(setup)
 which_key.register(mappings, opts)
 which_key.register(vmappings, vopts)
 
+-- Add to existing leaders
 which_key.register({
     c = "Comment",
     b = "Block Comment",
-    g = "Go To Top Of File"
+    g = "Go To Top Of File",
+    h = "First char of line",
+    l = "End of line",
 }, {mode = "n", prefix = "g"})
 
 which_key.register({
     c = "Comment",
     b = "Block Comment",
-    g = "Go To Top Of File"
+    g = "Go To Top Of File",
+    h = "First char of line",
+    l = "End of line",
 }, {mode = "v", prefix = "g"})
 
---[[ which_key.register({
-    j = {
-        name = "Java",
-        o = {"<Cmd>lua require'jdtls'.organize_imports()<CR>", "Organize Imports"},
-        v = {"<Cmd>lua require('jdtls').extract_variable()<CR>", "Extract Variable"},
-        c = {"<Cmd>lua require('jdtls').extract_constant()<CR>", "Extract Constant"},
-        m = {"<Esc><Cmd>lua require('jdtls').extract_method(true)<CR>", "Extract Method"},
-        a = {"<cmd>lua require('jdtls').code_action()<CR>", "Code Action"},
-    }
-}, {prefix = "<leader>", nowait = true}) ]]
-
--- which_key.register({
---     j = {
---         name = "Java",
---         i = {"<cmd>lua require('jdtls').organize_imports()<CR>", "Organize Imports"},
---         c = {"<cmd>lua require('jdtls').compile('incremental')", "Compile"},
---     },
--- }, {mode = "n", prefix = "<leader>"})
-
--- local P = {}
--- Keymaps = P
---
--- function P.mapJavaKeys(bufnr)
---     which_key.register({
---         j = {
---             name = "Java",
---             i = {"<cmd>lua require('jdtls').organize_imports()<CR>", "Organize Imports"},
---             c = {"<cmd>lua require('jdtls').compile('incremental')", "Compile"},
---         },
---     }, {mode = "n", prefix = "<leader>"})
--- end
--- return P
