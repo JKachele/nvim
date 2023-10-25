@@ -48,6 +48,27 @@ lazy.setup({
     -- "lunarvim/colorschemes", -- A bunch of colorschemes you can try out
     { "bluz71/vim-moonfly-colors", name = "moonfly" },
 
+    -- CSV Highlighting
+    {
+        'cameron-wags/rainbow_csv.nvim',
+        config = true,
+        ft = {
+            'csv',
+            'tsv',
+            'csv_semicolon',
+            'csv_whitespace',
+            'csv_pipe',
+            'rfc_csv',
+            'rfc_semicolon'
+        },
+        cmd = {
+            'RainbowDelim',
+            'RainbowDelimSimple',
+            'RainbowDelimQuoted',
+            'RainbowMultiDelim'
+        }
+    },
+
     -- Vim Game
     "ThePrimeagen/vim-be-good",
 
@@ -94,7 +115,7 @@ lazy.setup({
     -- "JoosepAlviste/nvim-ts-context-commentstring",
 
     -- Git
-    -- "lewis6991/gitsigns.nvim",
+    "lewis6991/gitsigns.nvim",
 
     -- Debug Adapter Protocol
     "mfussenegger/nvim-dap",
