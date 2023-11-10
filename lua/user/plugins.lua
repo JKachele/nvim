@@ -26,8 +26,12 @@ lazy.setup({
     "nvim-lua/plenary.nvim",        -- Useful lua functions used ny lots of plugins
     "windwp/nvim-autopairs",        -- Autopairs, integrates with both cmp and treesitter
     "numToStr/Comment.nvim",        -- Easily comment stuff
-    "kyazdani42/nvim-web-devicons",
-    "kyazdani42/nvim-tree.lua",
+    "nvim-tree/nvim-web-devicons",
+    { "nvim-tree/nvim-tree.lua",
+        version = "*",
+        lazy = false,
+        dependencies = {"nvim-tree/nvim-web-devicons"},
+    },
     "akinsho/bufferline.nvim",
     "moll/vim-bbye",
     "nvim-lualine/lualine.nvim",
@@ -35,13 +39,13 @@ lazy.setup({
     "akinsho/toggleterm.nvim",
     "ahmedkhalf/project.nvim",
     "lewis6991/impatient.nvim",
-    "lukas-reineke/indent-blankline.nvim",
+    { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
     "goolord/alpha-nvim",
     "Shatur/neovim-tasks",
-    "eandrju/cellular-automaton.nvim",
+    -- "eandrju/cellular-automaton.nvim",
     "jkachele/vim-templates-java",
     "folke/which-key.nvim",
-    "m4xshen/hardtime.nvim",
+    { "m4xshen/hardtime.nvim", dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" } },
     { "iamcco/markdown-preview.nvim", build=function() vim.fn["mkdp#util#install"]() end },
 
     -- Colorschemes

@@ -10,6 +10,7 @@ hardtime.setup({
     hint = true,
     notification = true,
     allow_different_key = false,
+    enabled = true,
     resetting_keys = {
         ["1"] = { "n", "v" },
         ["2"] = { "n", "v" },
@@ -46,12 +47,10 @@ hardtime.setup({
         ["<C-P>"] = { "n", "v" },
     },
     disabled_keys = {
-        ["<UP>"] = { "n", "v" },
-        ["<DOWN>"] = { "n", "v" },
-        ["<LEFT>"] = { "n", "v" },
-        ["<RIGHT>"] ={ "n", "v" },
+        ["<Up>"] = { "n", "v" },
+        ["<Down>"] = { "n", "v" },
+        ["<Left>"] = { "n", "v" },
+        ["<Right>"] = { "n", "v" }
     },
     disabled_filetypes = { "qf", "netrw", "NvimTree", "lazy", "mason", "help" },
 })
-
-vim.cmd "Hardtime enable"
