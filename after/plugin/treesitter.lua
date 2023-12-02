@@ -1,6 +1,6 @@
 local configs = require("nvim-treesitter.configs")
 configs.setup {
-    ensure_installed = "all",
+    ensure_installed = { "java", "c", "lua", "rust", "python", "bash" },
     sync_install = false,
     ignore_install = { "" }, -- List of parsers to ignore installing
     autopairs = {

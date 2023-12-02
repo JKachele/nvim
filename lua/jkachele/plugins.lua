@@ -32,49 +32,33 @@ lazy.setup({
         lazy = false,
         dependencies = {"nvim-tree/nvim-web-devicons"},
     },
-    "akinsho/bufferline.nvim",
-    "moll/vim-bbye",
-    "nvim-lualine/lualine.nvim",
-    "arkav/lualine-lsp-progress",
-    "akinsho/toggleterm.nvim",
-    "ahmedkhalf/project.nvim",
-    "lewis6991/impatient.nvim",
-    { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
-    "goolord/alpha-nvim",
-    "Shatur/neovim-tasks",
-    -- "eandrju/cellular-automaton.nvim",
-    "jkachele/vim-templates-java",
-    "folke/which-key.nvim",
-    { "m4xshen/hardtime.nvim", dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" } },
-    { "iamcco/markdown-preview.nvim", build=function() vim.fn["mkdp#util#install"]() end },
+    "nvim-lualine/lualine.nvim",    -- Status Line on bottom
+    "akinsho/bufferline.nvim",      -- Line to show open Buffers
+    "moll/vim-bbye",                -- Easily delete buffers
+    "akinsho/toggleterm.nvim",      -- Floating Terminal in Nvim
+    "ahmedkhalf/project.nvim",      -- Easy Project management
+    { "lukas-reineke/indent-blankline.nvim",    -- Creates an indent line
+        main = "ibl",
+        opts = {}
+    },
+    "goolord/alpha-nvim",           -- Neovim Title Screen
+    "Shatur/neovim-tasks",          -- Create tasks to easily compile and run projects
+    "jkachele/vim-templates-java",  -- Add templates for files
+    "folke/which-key.nvim",         -- Easily see keybinds
+    { "m4xshen/hardtime.nvim",      -- Disable some keybinds to force use of vim binds
+        dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" }
+    },
+    { "iamcco/markdown-preview.nvim",   -- Preview Markdown files in the browser
+        build=function() vim.fn["mkdp#util#install"]() end
+    },
+    "mbbill/undotree",              -- See history tree of a file
+    { "stevearc/dressing.nvim",
+        event = "VeryLazy",
+    },
 
     -- Colorschemes
     -- "lunarvim/colorschemes", -- A bunch of colorschemes you can try out
     { "bluz71/vim-moonfly-colors", name = "moonfly" },
-
-    -- CSV Highlighting
-    {
-        'cameron-wags/rainbow_csv.nvim',
-        config = true,
-        ft = {
-            'csv',
-            'tsv',
-            'csv_semicolon',
-            'csv_whitespace',
-            'csv_pipe',
-            'rfc_csv',
-            'rfc_semicolon'
-        },
-        cmd = {
-            'RainbowDelim',
-            'RainbowDelimSimple',
-            'RainbowDelimQuoted',
-            'RainbowMultiDelim'
-        }
-    },
-
-    -- Vim Game
-    "ThePrimeagen/vim-be-good",
 
     -- cmp plugins
     {"hrsh7th/nvim-cmp", commit = "1cad30f"}, -- The completion plugin
@@ -91,23 +75,23 @@ lazy.setup({
     "rafamadriz/friendly-snippets", -- a bunch of snippets to use
 
     -- LSP
-    "neovim/nvim-lspconfig", -- enable LSP
-    {"williamboman/mason.nvim",
-    build = ":MasonUpdate"},
+    "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
-    "jose-elias-alvarez/null-ls.nvim", -- for formatters and linters
-    {
-        "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
-        config = function()
-            require("lsp_lines").setup()
-        end,
+    { "neovim/nvim-lspconfig",
+        event = { "BufReadPre", "BufNewFile" },
     },
+    "antosha417/nvim-lsp-file-operations",
     "mfussenegger/nvim-jdtls",
     "simrat39/rust-tools.nvim",
+    "arkav/lualine-lsp-progress",
 
     -- Telescope
     "nvim-telescope/telescope.nvim",
     "nvim-telescope/telescope-media-files.nvim",
+    -- { "ThePrimeagen/harpoon",
+    -- branch = "harpoon2",
+    -- dependencies = {"nvim-lua/plenary.nvim"}
+    -- },
 
     -- Treesitter
     {
@@ -115,7 +99,7 @@ lazy.setup({
         build = ":TSUpdate",
     },
     -- "p00f/nvim-ts-rainbow",
-    -- "nvim-treesitter/playground",
+    "nvim-treesitter/playground",
     -- "JoosepAlviste/nvim-ts-context-commentstring",
 
     -- Git

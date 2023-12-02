@@ -101,12 +101,13 @@ local mappings = {
     },
     ["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
     ["P"] = { "<cmd>Telescope projects<cr>", "Projects" },
+    ["u"] = { "<cmd>UndotreeToggle<cr>", "Undo Tree" },
     ["x"] = {"<cmd>source ~/.config/nvim/init.lua<cr>", "Reload Neovim Config"},
 
     c = {
         name = "Cmake",
-        s = {"<cmd>Task start cmake configure<cr>", "Configure Cmake"},
-        g = {"<cmd>Task set_module_param cmake target<cr>", "Set CMake Target"},
+        c = {"<cmd>Task start cmake configure<cr>", "Configure Cmake"},
+        s = {"<cmd>Task set_module_param cmake target<cr>", "Set CMake Target"},
         r = {"<C-w>l:copen 4<Bar> Task start cmake run<cr>", "Run Cmake"},
         d = {"<cmd>Task start cmake debug<cr>", "Debug"},
         x = {"<C-w>l<C-w>j:q<cr>", "Quit Cmake Window"}
@@ -168,6 +169,11 @@ local mappings = {
 
     t = {
         name = "Template",
+        c = {
+            name = "C++",
+            a = {"<cmd>TemplateInit cppAOC<cr>", "Advent Of Code"},
+            m = {"<cmd>TemplateInit cppMain<cr>", "Main"},
+        },
         j = {
             name = "Java",
             c = {"<cmd>TemplateInit javaClass<cr>", "Java Class"},

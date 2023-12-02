@@ -1,0 +1,14 @@
+/*************************************************
+ *Project-------Advent_Of_Code
+ *File----------{{FILE}}
+ *Author--------{{NAME}}
+ *Created-------{{TIMESTAMP}}
+ *License-------Mozilla Public License Version 2.0
+ ************************************************/
+
+#include <iostream>
+#include <fstream>
+using std::cout;
+using std::endl;
+using std::cerr;
+using std::string;
