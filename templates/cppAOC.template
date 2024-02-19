@@ -1,14 +1,58 @@
 /*************************************************
  *Project-------Advent_Of_Code
- *File----------{{FILE}}
+ *File----------{{FILEE}}
  *Author--------{{NAME}}
  *Created-------{{TIMESTAMP}}
  *License-------Mozilla Public License Version 2.0
  ************************************************/
-
+#include <cstddef>
 #include <iostream>
 #include <fstream>
+#include <vector>
+
+#define SOURCE_DIR _SOURCE_DIR
+
 using std::cout;
 using std::endl;
 using std::cerr;
 using std::string;
+using std::vector;
+
+vector<string> getInput(string);
+void printVector(vector<string>);
+
+int main() {
+    string source(SOURCE_DIR);
+    source = source.append("/src/2023/Day1/input.txt");
+    vector<string> input = getInput(source);
+    if (input.empty()) {
+        return 1;
+    }
+    printVector(input);
+
+    return 0;
+}
+
+vector<string> getInput(string source) {
+    vector<string> input;
+    std::fstream file;
+    file.open(source, std::ios::in);
+    if (file.is_open()) {
+        string line;
+        while (std::getline(file, line)) {
+            // cout << line << endl;
+            input.push_back(line);
+        }
+        file.close();
+    } else {
+        cerr << "File Not Found" << endl;
+    }
+
+    return input;
+}
+
+void printVector(vector<string> input) {
+    for (auto line : input) {
+        cout << line << endl;
+    }
+}

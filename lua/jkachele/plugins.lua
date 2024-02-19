@@ -83,6 +83,11 @@ lazy.setup({
     "antosha417/nvim-lsp-file-operations",
     "mfussenegger/nvim-jdtls",
     "simrat39/rust-tools.nvim",
+    { "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+        config = function()
+            require("lsp_lines").setup()
+        end,
+    },
     "arkav/lualine-lsp-progress",
 
     -- Telescope
