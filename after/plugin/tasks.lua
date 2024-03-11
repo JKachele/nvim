@@ -15,6 +15,15 @@ tasks.setup({
                 configure = { '-D', 'CMAKE_EXPORT_COMPILE_COMMANDS=1', '-G', 'Ninja' },
             },
         },
+        make = {
+            cmd = 'make',
+            args = {
+                all = { '-j10', '-s', 'all' },
+                build = { '-s', 'build' },
+                run = { '-s', 'run' },
+                clean = { '-s', 'clean' },
+            },
+        },
     },
     save_before_run = true, -- If true, all files will be saved before executing a task.
     params_file = 'neovim.json', -- JSON file to store module and task parameters.

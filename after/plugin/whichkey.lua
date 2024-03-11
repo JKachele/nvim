@@ -105,12 +105,24 @@ local mappings = {
     ["x"] = {"<cmd>source ~/.config/nvim/init.lua<cr>", "Reload Neovim Config"},
 
     c = {
-        name = "Cmake",
-        c = {"<cmd>Task start cmake configure<cr>", "Configure Cmake"},
-        s = {"<cmd>Task set_module_param cmake target<cr>", "Set CMake Target"},
-        r = {"<C-w>l:copen 4<Bar> Task start cmake run<cr>", "Run Cmake"},
-        d = {"<cmd>Task start cmake debug<cr>", "Debug"},
-        x = {"<C-w>l<C-w>j:q<cr>", "Quit Cmake Window"}
+        name = "Compile",
+        c = {
+            name = "CMake",
+            c = {"<cmd>Task start cmake configure<cr>", "Configure Cmake"},
+            s = {"<cmd>Task set_module_param cmake target<cr>", "Set CMake Target"},
+            r = {"<C-w>l:copen 4<Bar> Task start cmake run<cr>", "Run Cmake"},
+            d = {"<cmd>Task start cmake debug<cr>", "Debug"},
+            x = {"<C-w>l<C-w>j:q<cr>", "Close Quickfix Window"}
+        },
+        m = {
+            name = "Make",
+            a = {"<cmd>Task start make all<cr>", "Make all"},
+            b = {"<cmd>Task start make build<cr>", "Make build"},
+            r = {"<cmd>Task start make run<cr>", "Make run"},
+            c = {"<cmd>Task start make clean<cr>", "Make clean"},
+            x = {"<C-w>l<C-w>j:q<cr>", "Close Quickfix Window"}
+        },
+        x = {"<C-w>l<C-w>j:q<cr>", "Close Quickfix Window"},
     },
 
     d = {
@@ -170,14 +182,20 @@ local mappings = {
     t = {
         name = "Template",
         c = {
-            name = "C++",
-            a = {"<cmd>TemplateInit cppAOC<cr>", "Advent Of Code"},
-            m = {"<cmd>TemplateInit cppMain<cr>", "Main"},
+            name = "C",
+            m = {"<cmd>TemplateInit c/cMain<cr>", "C Main"},
+            l = {"<cmd>TemplateInit c/cLib<cr>", "C Library"},
+            h = {"<cmd>TemplateInit c/cHeader<cr>", "C Header"},
         },
         j = {
             name = "Java",
-            c = {"<cmd>TemplateInit javaClass<cr>", "Java Class"},
-            m = {"<cmd>TemplateInit javaMain<cr>", "Java Main Class"},
+            c = {"<cmd>TemplateInit java/javaClass<cr>", "Java Class"},
+            m = {"<cmd>TemplateInit java/javaMain<cr>", "Java Main Class"},
+        },
+        p = {
+            name = "C++",
+            a = {"<cmd>TemplateInit cpp/cppAOC<cr>", "C++ Advent Of Code"},
+            m = {"<cmd>TemplateInit cpp/cppMain<cr>", "C++ Main"},
         },
     },
 }
