@@ -7,39 +7,28 @@
  ************************************************/
 
 #include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
-#include "../../util/linkedlist.h"
+#include "../util/linkedlist.h"
+#include "../util/inputFile.h"
 
-sNode *LLHead;
-sNode *LLTail;
+void part1(linkedList_s ll) {
 
-void getInputFile(char *fileName) {
-    FILE *inputFile = fopen(fileName, "r");     // Open file in read mode
-    char *line = NULL;
-    size_t len = 0;
-    ssize_t read;
+    printf("Part 1: ");
+}
 
-    if (inputFile == NULL) {    // If file dosent exist, exit
-        exit(EXIT_FAILURE);
-    }
+void part2(linkedList_s ll) {
 
-    while ((read = getline(&line, &len, inputFile)) != -1) {    // set "line" to the line in the file and test for end of file
-        line[strlen(line) - 1] = '\0';                          // Remove newline character from string
-        sNode *lineNode = createSNode(line);
-        insertSNodeAtTail(&LLHead, &LLTail, lineNode);
-    }
-
-    fclose(inputFile);
-    if (line) {
-        free(line);
-    }
+    printf("Part 2: ");
 }
 
 int main(int argc, char *argv[]) {
-    getInputFile("assets/2023/Day1.txt");
-    // getInputFile("assets/test.txt");
-    printSNodeList(LLHead);
-    {{CURSOR}}
+    linkedList_s ll = getInputFile("assets/2023/Day1.txt");
+    // linkedList_s ll = getInputFile("assets/test.txt");
+    // printSNodeList(LLHead);
+
+    part1(ll);
+    part2(ll);
+
     return 0;
 }
+
