@@ -1,5 +1,5 @@
 /*************************************************
- *File----------{{FILE}}
+ *File----------{{FILEE}}
  *Project-------{{PROJECT}}
  *Author--------{{NAME}}
  *Created-------{{TIMESTAMP}}
@@ -9,6 +9,6 @@
 #include <stdio.h>
 
 int main(int argc, char *argv[]) {
-    {{CURSOR}}printf("Hello, World\n");
+    {{CURSOR}}printf("Hello, World!\n");
     return 0;
 }

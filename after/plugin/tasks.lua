@@ -23,6 +23,8 @@ tasks.setup({
                 buildRelease = { '-s', 'buildRelease' },
                 run = { '-s', 'run' },
                 clean = { '-s', 'clean' },
+                testBuild = { '-s', 'testBuild' },
+                runTest = { '-s', 'runTest' },
             },
         },
     },

@@ -116,12 +116,19 @@ local mappings = {
         },
         m = {
             name = "Make",
-            a = {"<cmd>Task start make all<cr>", "Make all"},
+            -- a = {"<cmd>Task start make all<cr>", "Make all"},
             b = {"<cmd>Task start make build<cr>", "Make build"},
             B = {"<cmd>Task start make buildRelease<cr>", "Make build release"},
             r = {"<cmd>Task start make run<cr>", "Make run"},
             c = {"<cmd>Task start make clean<cr>", "Make clean"},
-            x = {"<C-w>l<C-w>j:q<cr>", "Close Quickfix Window"}
+            t = {"<cmd>Task start make runTest<cr>", "Make Run Test"},
+            x = {"<C-w>l<C-w>j:q<cr>", "Close Quickfix Window"},
+            a = {   function()
+                        vim.ui.input({prompt='Enter day to run: '},
+                            function(input)
+                                vim.cmd("Task start make DAY=" .. input .. " -s build run")
+                            end)
+                    end, "Build Advent of Code"},
         },
         x = {"<C-w>l<C-w>j:q<cr>", "Close Quickfix Window"},
     },
@@ -129,6 +136,7 @@ local mappings = {
     d = {
         name = "Debug",
         b = {"<cmd>lua require'dap'.toggle_breakpoint()<cr>", "Breakpoint"},
+        B = {"<cmd>lua require'dap'.clear_breakpoints()<cr>", "Clear All Breakpoints"},
         c = {"<cmd>lua require'dap'.continue()<cr>", "Continue (F5)"},
         i = {"<cmd>lua require'dap'.step_into()<cr>", "Step Into (F7)"},
         l = {"<cmd>lua require'dap'.run_last()<cr>", "Run last"},

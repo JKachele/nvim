@@ -1,5 +1,5 @@
 /*************************************************
- *File----------{{FILE}}
+ *File----------{{FILEE}}
  *Project-------{{PROJECT}}
  *Author--------{{NAME}}
  *Created-------{{TIMESTAMP}}
@@ -7,24 +7,29 @@
  ************************************************/
 
 #include <stdio.h>
-#include <string.h>
 #include "../util/linkedlist.h"
 #include "../util/inputFile.h"
 
 void part1(linkedList_s ll) {
-
-    printf("Part 1: ");
+    node_s *current = ll.head;
+    while(current != NULL) {
+        current = current->next;
+    }
+    printf("Part 1: \n");
 }
 
 void part2(linkedList_s ll) {
-
-    printf("Part 2: ");
+    node_s *current = ll.head;
+    while(current != NULL) {
+        current = current->next;
+    }
+    printf("Part 2: \n");
 }
 
 int main(int argc, char *argv[]) {
-    linkedList_s ll = getInputFile("assets/2023/Day1.txt");
+    linkedList_s ll = getInputFile("assets/2023/{{FILE}}.txt");
     // linkedList_s ll = getInputFile("assets/test.txt");
-    // printSNodeList(LLHead);
+    {{CURSOR}}printSNodeList(ll.head);
 
     part1(ll);
     part2(ll);
