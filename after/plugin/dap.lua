@@ -51,9 +51,10 @@ dapui.setup {
         {
             elements = {
                 -- "repl",
-                "console",
+                "scopes",
+                -- "console",
             },
-            size = 4,
+            size = 10,
             position = "bottom",
         },
     },
