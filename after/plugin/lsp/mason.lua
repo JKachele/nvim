@@ -21,7 +21,7 @@ mason_lspconfig.setup({
         "cmake",
         "asm_lsp",
         "cmake",
-        "arduino_language_server",
+        -- "arduino_language_server",
         "jdtls",
         "rust_analyzer",
     },

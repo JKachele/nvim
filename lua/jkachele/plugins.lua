@@ -66,7 +66,7 @@ lazy.setup({
     "hrsh7th/cmp-path", -- path completions
     "hrsh7th/cmp-cmdline", -- cmdline completions
     "saadparwaiz1/cmp_luasnip", -- snippet completions
-    {"tzachar/cmp-tabnine", build="./install.sh"}, -- Tabnine completions
+    { "tzachar/cmp-tabnine", build="./install.sh" }, -- Tabnine completions
     "hrsh7th/cmp-nvim-lua",
     "hrsh7th/cmp-nvim-lsp",
 
