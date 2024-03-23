@@ -40,7 +40,8 @@ dapui.setup {
             elements = {
                 -- Elements can be strings or table with id and size keys.
                 { id = "scopes", size = 0.25 },
-                "breakpoints",
+                -- "breakpoints",
+                "repl",
                 -- "stacks",
                 -- "watches",
             },
@@ -49,10 +50,10 @@ dapui.setup {
         },
         {
             elements = {
-                "repl",
+                -- "repl",
                 "console",
             },
-            size = 0.25, -- 25% of total lines
+            size = 4,
             position = "bottom",
         },
     },
@@ -80,6 +81,18 @@ dap.adapters.lldb = {
     name = 'lldb'
 }
 
+dap.adapters.cppdbg = {
+    id = 'cppdbg',
+    type = 'executable',
+    command = '/home/jkachele/.local/share/cpptools/extension/debugAdapters/bin/OpenDebugAD7',
+}
+
+dap.adapters.gdb = {
+    type = 'executable',
+    command = 'gdb',
+    args = { "-i", "dap" },
+}
+
 dap.configurations.cpp = {
     sname = 'Launch',
     type = 'lldb',
@@ -89,12 +102,26 @@ dap.configurations.cpp = {
     end,
     cwd = '${workspaceFolder}',
     stopOnEntry = false,
-    args = {},etupCommands = {
+    args = {},
+    setupCommands = {
         {
             text = '-enable-pretty-printing',
             description =  'enable pretty printing',
             ignoreFailures = false
         },
+    },
+}
+
+dap.configurations.c = {
+    {
+        name = "Launch",
+        type = "gdb",
+        request = "launch",
+        program = function()
+            return vim.fn.input('Path to Executable: ', vim.fn.getcwd() .. '/', 'file')
+        end,
+        cwd = '${workspaceFolder}',
+        stopAtBeginningOfMainSubprogram = false,
     },
 }
 
@@ -112,7 +139,6 @@ dap.configurations.python = {
     },
 }
 
-dap.configurations.c = dap.configurations.cpp
 dap.configurations.rust = dap.configurations.cpp
 
 vim.fn.sign_define('DapBreakpoint', {text='🛑', texthl='', linehl='', numhl=''})

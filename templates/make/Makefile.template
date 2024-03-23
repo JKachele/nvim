@@ -1,0 +1,37 @@
+##################################################
+# File----------Makefile
+# Project-------{{PROJECT}}
+# Author--------{{NAME}}
+# Created-------{{TIMESTAMP}}
+# License-------{{LICENSE}}
+##################################################
+
+CC = gcc
+CFLAGS = -g
+
+SRC = src/main.c
+OBJ = $(SRC:.c=.o)
+BIN = bin
+
+.PHONY: all build dirs clean
+
+all: dirs out
+
+build: all
+
+dirs:
+	mkdir -p ./$(BIN)
+
+run: all
+	$(BIN)/out
+
+out: $(OBJ)
+	$(CC) -o $(BIN)/out $^ $(LDFLAGS)
+	# chmod 755 $(BIN)/out
+
+%.o: %.c
+	$(CC) -o $@ -c $< $(CFLAGS)
+
+clean:
+	rm -rf $(BIN) $(OBJ)
+

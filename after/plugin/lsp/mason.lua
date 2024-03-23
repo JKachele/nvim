@@ -15,13 +15,13 @@ mason.setup({
 mason_lspconfig.setup({
     ensure_installed = {
         "lua_ls",
-        "pyright",
-        "jsonls",
+        -- "pyright",
+        -- "jsonls",
         "clangd",
         "cmake",
         "asm_lsp",
         "cmake",
-        -- "arduino_language_server",
+        "arduino_language_server",
         "jdtls",
         "rust_analyzer",
     },

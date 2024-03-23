@@ -1,0 +1,13 @@
+/*************************************************
+ *File----------{{FILEE}}
+ *Project-------{{PROJECT}}
+ *Author--------{{NAME}}
+ *Created-------{{TIMESTAMP}}
+ *License-------{{LICENSE}}
+ ************************************************/
+#ifndef {{MACRO_GUARD}}
+#define {{MACRO_GUARD}}
+
+{{CURSOR}}
+
+#endif
