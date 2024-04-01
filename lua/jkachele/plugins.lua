@@ -108,7 +108,7 @@ lazy.setup({
     -- "JoosepAlviste/nvim-ts-context-commentstring",
 
     -- Git
-    "lewis6991/gitsigns.nvim",
+    {"lewis6991/gitsigns.nvim", commit = "fb9fd53"},
 
     -- Debug Adapter Protocol
     "mfussenegger/nvim-dap",
