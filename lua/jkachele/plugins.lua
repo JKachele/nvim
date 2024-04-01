@@ -43,7 +43,7 @@ lazy.setup({
     },
     "goolord/alpha-nvim",           -- Neovim Title Screen
     "Shatur/neovim-tasks",          -- Create tasks to easily compile and run projects
-    "jkachele/vim-templates-java",  -- Add templates for files
+    {"jkachele/vim-templates", branch = "all"},  -- Add templates for files
     "folke/which-key.nvim",         -- Easily see keybinds
     { "m4xshen/hardtime.nvim",      -- Disable some keybinds to force use of vim binds
         dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" }
