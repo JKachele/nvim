@@ -13,6 +13,11 @@ if not dap_ui_status_ok then
     return
 end
 
+local dap_vt_status_ok, dapvt = pcall(require, "nvim-dap-virual-text")
+if not dap_vt_status_ok then
+    return
+end
+
 -- dapui.setup()
 dapui.setup {
     icons = { expanded = "▾", collapsed = "▸" },
@@ -71,6 +76,8 @@ dapui.setup {
         max_type_length = nil, -- Can be integer or nil.
     },
 }
+
+dapvt.setup()
 
 masonDap.setup({
     automatic_setup = true,

@@ -32,6 +32,8 @@ local on_attach = function(_, _)
     }, {prefix = "<leader>", nowait = true})
 end
 
+require("lsp_lines").setup()
+
 local capabilities = cmp_nvim_lsp.default_capabilities()
 
 local signs = {
