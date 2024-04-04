@@ -13,7 +13,7 @@ if not dap_ui_status_ok then
     return
 end
 
-local dap_vt_status_ok, dapvt = pcall(require, "nvim-dap-virual-text")
+local dap_vt_status_ok, dapvt = pcall(require, "nvim-dap-virtual-text")
 if not dap_vt_status_ok then
     return
 end
