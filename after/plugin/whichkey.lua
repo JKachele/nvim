@@ -124,10 +124,8 @@ local mappings = {
             t = {"<cmd>Task start make runTest<cr>", "Make Run Test"},
             x = {"<C-w>l<C-w>j:q<cr>", "Close Quickfix Window"},
             a = {   function()
-                        vim.ui.input({prompt='Enter day to run: '},
-                            function(input)
-                                vim.cmd("Task start make DAY=" .. input .. " -s build run")
-                            end)
+                        local input = vim.fn.input("Enter day to run: ")
+                        vim.cmd("Task start make DAY=" .. input .. " -s build run")
                     end, "Build Advent of Code"},
         },
         x = {"<C-w>l<C-w>j:q<cr>", "Close Quickfix Window"},
