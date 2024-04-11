@@ -10,6 +10,12 @@ local hide_in_width = function()
 	return vim.fn.winwidth(0) > 80
 end
 
+local mode = {
+	"mode",
+	icons_enabled = true,
+	icon = "",
+}
+
 local diagnostics = {
 	"diagnostics",
 	sources = { "nvim_diagnostic" },
@@ -62,7 +68,7 @@ lualine.setup({
 		always_divide_middle = true,
 	},
 	sections = {
-		lualine_a = { "mode" },
+		lualine_a = { mode },
 		lualine_b = { diagnostics },
 		lualine_c = { "filename","lsp_progress" },
 		lualine_x = { branch, diff, "encoding", filetype },
