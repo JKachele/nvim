@@ -77,9 +77,9 @@ lazy.setup({
     "hrsh7th/cmp-nvim-lsp",                     -- Completions from lsp
     "L3MON4D3/LuaSnip",                         --snippet engine
     "rafamadriz/friendly-snippets",             -- a bunch of snippets to use
-    { "tzachar/cmp-tabnine",                    -- Tabnine completions
-        build="./install.sh"
-    },
+    -- { "tzachar/cmp-tabnine",                    -- Tabnine completions
+    --     build="./install.sh"
+    -- },
 
     -- LSP
     "williamboman/mason.nvim",                  -- LSP package manager
