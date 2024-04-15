@@ -58,6 +58,9 @@ lazy.setup({
     { "stevearc/dressing.nvim",                 -- Enable floating input and selection panels
         event = "VeryLazy",
     },
+    { "kevinhwang91/nvim-ufo",                  -- Customize folding
+        dependencies = { "kevinhwang91/promise-async" }
+    },
 
     -- Colorschemes
     { "bluz71/vim-moonfly-colors",              -- Moonfly Colorscheme
