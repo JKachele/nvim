@@ -125,7 +125,11 @@ local mappings = {
             x = {"<C-w>l<C-w>j:q<cr>", "Close Quickfix Window"},
             a = {   function()
                         local input = vim.fn.input("Enter day to run: ")
-                        vim.cmd("Task start make DAY=" .. input .. " -s build run")
+                        vim.cmd("Task start make DAY=" .. input .. " -s run")
+                    end, "Run Advent of Code"},
+            A = {   function()
+                        local input = vim.fn.input("Enter day to build: ")
+                        vim.cmd("Task start make DAY=" .. input .. " build")
                     end, "Build Advent of Code"},
         },
         x = {"<C-w>l<C-w>j:q<cr>", "Close Quickfix Window"},
