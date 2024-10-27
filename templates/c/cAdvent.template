@@ -11,29 +11,29 @@
 #include "../util/inputFile.h"
 
 void part1(llist *ll) {
-    llNode *current = ll->head;
-    while(current != NULL) {
-        current = current->next;
-    }
-    printf("Part 1: \n");
+        llNode *current = ll->head;
+        while(current != NULL) {
+                current = current->next;
+        }
+        printf("Part 1: \n");
 }
 
 void part2(llist *ll) {
-    llNode *current = ll->head;
-    while(current != NULL) {
-        current = current->next;
-    }
-    printf("Part 2: \n");
+        llNode *current = ll->head;
+        while(current != NULL) {
+                current = current->next;
+        }
+        printf("Part 2: \n");
 }
 
 int main(int argc, char *argv[]) {
-    llist *ll = getInputFile("assets/2023/{{FILE}}.txt");
-    // llist *ll = getInputFile("assets/test.txt");
-    {{CURSOR}}llist_print(ll, printInput);
+        llist *ll = getInputFile("assets/2023/{{FILE}}.txt");
+        // llist *ll = getInputFile("assets/test.txt");
+        {{CURSOR}}llist_print(ll, printInput);
 
-    part1(ll);
-    part2(ll);
+        part1(ll);
+        part2(ll);
 
-    return 0;
+        return 0;
 }
 

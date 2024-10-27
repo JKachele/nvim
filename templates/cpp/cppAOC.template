@@ -22,37 +22,37 @@ vector<string> getInput(string);
 void printVector(vector<string>);
 
 int main() {
-    string source(SOURCE_DIR);
-    source = source.append("/src/2023/Day1/input.txt");
-    vector<string> input = getInput(source);
-    if (input.empty()) {
-        return 1;
-    }
-    printVector(input);
+        string source(SOURCE_DIR);
+        source = source.append("/src/2023/Day1/input.txt");
+        vector<string> input = getInput(source);
+        if (input.empty()) {
+                return 1;
+        }
+        printVector(input);
 
-    return 0;
+        return 0;
 }
 
 vector<string> getInput(string source) {
-    vector<string> input;
-    std::fstream file;
-    file.open(source, std::ios::in);
-    if (file.is_open()) {
-        string line;
-        while (std::getline(file, line)) {
-            // cout << line << endl;
-            input.push_back(line);
+        vector<string> input;
+        std::fstream file;
+        file.open(source, std::ios::in);
+        if (file.is_open()) {
+                string line;
+                while (std::getline(file, line)) {
+                        // cout << line << endl;
+                        input.push_back(line);
+                }
+                file.close();
+        } else {
+                cerr << "File Not Found" << endl;
         }
-        file.close();
-    } else {
-        cerr << "File Not Found" << endl;
-    }
 
-    return input;
+        return input;
 }
 
 void printVector(vector<string> input) {
-    for (auto line : input) {
-        cout << line << endl;
-    }
+        for (auto line : input) {
+                cout << line << endl;
+        }
 }

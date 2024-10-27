@@ -11,6 +11,6 @@ using std::cerr;
 using std::string;
 
 int main() {
-    cout << "Hello, World!" << endl;
-    return 0;
+        cout << "Hello, World!" << endl;
+        return 0;
 }
