@@ -121,11 +121,13 @@ local mappings = {
             B = {"<cmd>Task start make buildRelease<cr>", "Make build release"},
             r = {"<cmd>Task start make run<cr>", "Make run"},
             c = {"<cmd>Task start make clean<cr>", "Make clean"},
-            t = {"<cmd>Task start make runTest<cr>", "Make Run Test"},
+            -- t = {"<cmd>Task start make runTest<cr>", "Make Run Test"},
+            t = {"<cmd>TermExec cmd='make  -s runTest'<cr>", "Make Run Test"},
             x = {"<C-w>l<C-w>j:q<cr>", "Close Quickfix Window"},
             a = {   function()
                         local input = vim.fn.input("Enter day to run: ")
-                        vim.cmd("Task start make DAY=" .. input .. " -s run")
+                        -- vim.cmd("Task start make DAY=" .. input .. " -s run")
+                        vim.cmd("TermExec cmd='make DAY=" ..input.." -s run'")
                     end, "Run Advent of Code"},
             A = {   function()
                         local input = vim.fn.input("Enter day to build: ")
