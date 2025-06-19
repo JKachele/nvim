@@ -16,7 +16,7 @@ local on_attach = function(_, _)
             k = {"<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>", "Prev Diagnostic"},
             l = {"<cmd>lua require'lsp_lines'.toggle()<cr>", "Lsp Lines Toggle" },
             q = {"<cmd>lua vim.lsp.diagnostic.set_loclist()<cr>", "Quickfix" },
-            r = {"<cmd>vim.lsp.buf.rename<cr>", "Rename" },
+            r = {"<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
             R = {"<cmd>LspRestart<cr>", "Restart LSP" },
             s = {"<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
             S = {"<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", "Workspace Symbols"},
@@ -32,7 +32,7 @@ local on_attach = function(_, _)
     }, {prefix = "<leader>", nowait = true})
 end
 
-require("lsp_lines").setup()
+-- require("lsp_lines").setup()
 
 local capabilities = cmp_nvim_lsp.default_capabilities()
 

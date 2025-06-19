@@ -7,9 +7,22 @@
  ************************************************/
 
 #include <stdio.h>
+#include <stdarg.h>
 #include <string.h>
+#include <time.h>
 #include "../util/linkedlist.h"
 #include "../util/inputFile.h"
+#include "../lib/tllist.h"
+#include "../util/util.h"
+
+static bool Debug = false;
+void debugP(const char *format, ...) {
+        va_list args;
+        va_start(args, format);
+        if (Debug)
+                vprintf(format, args);
+        va_end(args);
+}
 
 void part1(llist *ll) {
         llNode *current = ll->head;
@@ -32,13 +45,27 @@ void part2(llist *ll) {
 }
 
 int main(int argc, char *argv[]) {
-        llist *ll = getInputFile("assets/2024/{{FILE}}.txt");
-        // llist *ll = getInputFile("assets/test.txt");
+        clock_t begin = clock();
+        llist *ll;
+        if (argc > 1 && strcmp(argv[1], "TEST") == 0) {
+                ll = getInputFile("assets/tests/2022/{{FILE}}.txt");
+                Debug = true;
+        } else {
+                ll = getInputFile("assets/inputs/2022/{{FILE}}.txt");
+        }
         {{CURSOR}}llist_print(ll, printInput);
 
+        clock_t parse = clock();
         part1(ll);
+        clock_t pt1 = clock();
         part2(ll);
+        clock_t pt2 = clock();
+
+        double parseTime = ((double)(parse - begin) / CLOCKS_PER_SEC) * 1000;
+        double pt1Time = ((double)(pt1 - parse) / CLOCKS_PER_SEC) * 1000;
+        double pt2Time = ((double)(pt2 - pt1) / CLOCKS_PER_SEC) * 1000;
+        printf("Execution Time (ms) - Input Parse: %f, Part1: %f, Part2: %f\n", 
+                        parseTime, pt1Time, pt2Time);
 
         return 0;
 }
-
