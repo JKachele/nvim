@@ -128,24 +128,10 @@ local mappings = {
                         x = {"<C-w>l<C-w>j:q<cr>", "Close Quickfix Window"},
                         a = {
                                 name = "Advent of Code",
-                                a = {   function()
-                                        local input = vim.fn.input("Enter day to run: ")
-                                        vim.cmd("wa")
-                                        -- vim.cmd("Task start make DAY=" .. input .. " -s run")
-                                        vim.cmd("TermExec cmd='make DAY=" ..input.." -s run'")
-                                end, "Run Advent of Code"},
-                                t = {   function()
-                                        local input = vim.fn.input("Enter day to run: ")
-                                        vim.cmd("wa")
-                                        -- vim.cmd("Task start make DAY=" .. input .. " -s run")
-                                        vim.cmd("TermExec cmd='make DAY=" ..input.." -s runWithTest'")
-                                end, "Run Advent of Code With Test Input"},
+                                a = {"<cmd>TermExec cmd='./RunAOC.sh run'<cr>", "Run Advent of Code"},
+                                t = {"<cmd>TermExec cmd='./RunAOC.sh runWithTest'<cr>", "Run Advent of Code With Test Input"},
                         },
-                        A = {   function()
-                                local input = vim.fn.input("Enter day to build: ")
-                                vim.cmd("wa")
-                                vim.cmd("Task start make DAY=" .. input .. " build")
-                        end, "Build Advent of Code"},
+                        A = {"<cmd>TermExec cmd='./RunAOC.sh build'<cr>", "Build Advent of Code"},
                 },
                 x = {"<C-w>l<C-w>j:q<cr>", "Close Quickfix Window"},
         },
