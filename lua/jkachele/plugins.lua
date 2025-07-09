@@ -68,18 +68,18 @@ lazy.setup({
     },
 
     -- cmp plugins
-    { "hrsh7th/nvim-cmp", commit = "1cad30f" }, -- The completion plugin
+    "hrsh7th/nvim-cmp",                         -- The completion plugin
     "hrsh7th/cmp-buffer",                       -- buffer completions
     "hrsh7th/cmp-path",                         -- path completions
     "hrsh7th/cmp-cmdline",                      -- cmdline completions
-    "saadparwaiz1/cmp_luasnip",                 -- snippet completions
     "hrsh7th/cmp-nvim-lua",                     -- Completions for nvim lua API
     "hrsh7th/cmp-nvim-lsp",                     -- Completions from lsp
     "L3MON4D3/LuaSnip",                         --snippet engine
     "rafamadriz/friendly-snippets",             -- a bunch of snippets to use
-    { "tzachar/cmp-tabnine",                    -- Tabnine completions
-        build="./install.sh"
-    },
+    "saadparwaiz1/cmp_luasnip",                 -- snippet completions
+    -- { "tzachar/cmp-tabnine",                    -- Tabnine completions
+    --     build="./install.sh"
+    -- },
 
     -- LSP
     "williamboman/mason.nvim",                  -- LSP package manager
@@ -88,7 +88,7 @@ lazy.setup({
         event = { "BufReadPre", "BufNewFile" },
     },
     "mfussenegger/nvim-jdtls",                  -- Java Language Server
-    "ErichDonGubler/lsp_lines.nvim",            -- Inline LSP Diagnostics
+    -- "ErichDonGubler/lsp_lines.nvim",            -- Inline LSP Diagnostics
     "arkav/lualine-lsp-progress",               -- Shows LSP loading in Lualine
 
     -- Telescope

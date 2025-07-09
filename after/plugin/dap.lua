@@ -41,22 +41,22 @@ dapui.setup {
     -- Elements are the elements shown in the layout (in order).
     -- Layouts are opened in order so that earlier layouts take priority in window sizing.
     layouts = {
+        -- {
+        --     elements = {
+        --         -- Elements can be strings or table with id and size keys.
+        --         { id = "scopes", size = 0.25 },
+        --         -- "breakpoints",
+        --         "repl",
+        --         -- "stacks",
+        --         -- "watches",
+        --     },
+        --     size = 20, -- 40 columns
+        --     position = "right",
+        -- },
         {
             elements = {
-                -- Elements can be strings or table with id and size keys.
-                { id = "scopes", size = 0.25 },
-                -- "breakpoints",
-                "repl",
-                -- "stacks",
-                -- "watches",
-            },
-            size = 40, -- 40 columns
-            position = "right",
-        },
-        {
-            elements = {
-                -- "repl",
                 "scopes",
+                "repl",
                 -- "console",
             },
             size = 10,

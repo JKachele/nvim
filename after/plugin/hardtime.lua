@@ -30,6 +30,7 @@ hardtime.setup({
         ["Y"] = { "n" },
         ["p"] = { "n" },
         ["P"] = { "n" },
+        ["z"] = { "n" },
         ["<CR>"]= { "n" },
     },
     restricted_keys = {
@@ -52,5 +53,5 @@ hardtime.setup({
         ["<Left>"] = { "n", "v" },
         ["<Right>"] = { "n", "v" }
     },
-    disabled_filetypes = { "qf", "netrw", "NvimTree", "lazy", "mason", "help" },
+    disabled_filetypes = { "qf", "netrw", "NvimTree", "lazy", "mason", "help", "txt" },
 })
