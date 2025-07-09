@@ -17,6 +17,7 @@ Personal Neovim Config Optimized for C, C++, Java, and Python Programming
 - ripgrep
 
 ## Features and Plugins
+- Plugin management with [lazy.nvim](https://github.com/folke/lazy.nvim)
 - File navigation with [nvim-tree.lua](https://github.com/kyazdani42/nvim-tree.lua)
 - Beautiful and configurable icons with [nvim-web-devicons](https://github.com/kyazdani42/nvim-web-devicons)
 - Git diffs and more with [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim) 
