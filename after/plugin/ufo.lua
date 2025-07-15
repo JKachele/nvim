@@ -51,5 +51,15 @@ require('ufo').setup({
         -- return {'lsp', 'indent'}
         return {'treesitter', 'indent'}
     end,
-    fold_virt_text_handler = handler
+    fold_virt_text_handler = handler,
+    open_fold_hl_timeout = 150,
+    close_fold_kinds_for_ft = {
+        default = {'imports', 'comment'},
+        json = {'array'},
+        c = {'comment', 'region'}
+    },
+    close_fold_current_line_for_ft = {
+        default = true,
+        c = false
+    },
 })

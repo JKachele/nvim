@@ -88,7 +88,7 @@ lazy.setup({
         event = { "BufReadPre", "BufNewFile" },
     },
     "mfussenegger/nvim-jdtls",                  -- Java Language Server
-    -- "ErichDonGubler/lsp_lines.nvim",            -- Inline LSP Diagnostics
+    "ErichDonGubler/lsp_lines.nvim",            -- Inline LSP Diagnostics
     "arkav/lualine-lsp-progress",               -- Shows LSP loading in Lualine
 
     -- Telescope
