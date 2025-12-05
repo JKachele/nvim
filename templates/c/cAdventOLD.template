@@ -8,22 +8,15 @@
 
 #include <stdio.h>
 #include <stdarg.h>
-#include <stdlib.h>
 #include <string.h>
 #include <time.h>
 #include "../util/linkedlist.h"
 #include "../util/inputFile.h"
 #include "../lib/tllist.h"
-#include "../util/vector.h"
 #include "../util/util.h"
 
-#define INPUT_BUFFER_SIZE 4096
-
-struct input {
-};
-
 static bool Debug = false;
-void debugp(const char *format, ...) {
+void debugP(const char *format, ...) {
         va_list args;
         va_start(args, format);
         if (Debug)
@@ -31,44 +24,41 @@ void debugp(const char *format, ...) {
         va_end(args);
 }
 
-void part1(struct input input) {
+void part1(llist *ll) {
+        llNode *current = ll->head;
+        while(current != NULL) {
+                char str[BUFFER_SIZE];
+                strncpy(str, (char*)current->data, BUFFER_SIZE);
+                current = current->next;
+        }
         printf("Part 1: \n\n");
 }
 
-void part2(struct input input) {
-        printf("Part 2: \n");
-}
-
-struct input parseInput(llist *ll) {
-        struct input input = {0};
-
+void part2(llist *ll) {
         llNode *current = ll->head;
         while(current != NULL) {
-                {{CURSOR}}char *str = (char*)current->data;
+                char str[BUFFER_SIZE];
+                strncpy(str, (char*)current->data, BUFFER_SIZE);
                 current = current->next;
         }
-
-        return input;
+        printf("Part 2: \n");
 }
 
 int main(int argc, char *argv[]) {
         clock_t begin = clock();
         llist *ll;
         if (argc > 1 && strcmp(argv[1], "TEST") == 0) {
-                char *file = "assets/tests/2025/{{FILE}}.txt";
-                ll = getInputFileLen(file, INPUT_BUFFER_SIZE);
+                ll = getInputFile("assets/tests/2022/{{FILE}}.txt");
                 Debug = true;
         } else {
-                char *file = "assets/inputs/2025/{{FILE}}.txt";
-                ll = getInputFileLen(file, INPUT_BUFFER_SIZE);
+                ll = getInputFile("assets/inputs/2022/{{FILE}}.txt");
         }
-        // llist_print(ll, printInput);
+        {{CURSOR}}llist_print(ll, printInput);
 
-        struct input input = parseInput(ll);
         clock_t parse = clock();
-        part1(input);
+        part1(ll);
         clock_t pt1 = clock();
-        part2(input);
+        part2(ll);
         clock_t pt2 = clock();
 
         double parseTime = ((double)(parse - begin) / CLOCKS_PER_SEC) * 1000;

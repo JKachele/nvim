@@ -181,7 +181,7 @@ nvim_tree.setup {
                 git_clean = false,
                 no_buffer = false,
                 no_bookmark = false,
-                custom = {"bin"},
+                custom = {"compile_commands"},
                 exclude = {},
         },
 }

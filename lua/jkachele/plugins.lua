@@ -61,6 +61,12 @@ lazy.setup({
     { "kevinhwang91/nvim-ufo",                  -- Customize folding
         dependencies = { "kevinhwang91/promise-async" }
     },
+    {
+       'mcauley-penney/visual-whitespace.nvim',
+       config = true,
+       event = "ModeChanged *:[vV\22]", -- optionally, lazy load on entering visual mode
+       opts = {},
+    },
 
     -- Colorschemes
     { "bluz71/vim-moonfly-colors",              -- Moonfly Colorscheme
