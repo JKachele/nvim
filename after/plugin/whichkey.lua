@@ -92,6 +92,8 @@ which_key.add({
         desc = "Find files", nowait = true, remap = false },
     { "<leader>h", "<cmd>nohlsearch<CR>",
         desc = "No Highlight", nowait = true, remap = false },
+    { "<leader>H", "<cmd>HexToggle<CR>",
+        desc = "Toggle Hex Mode", nowait = true, remap = false },
     { "<leader>P", "<cmd>Telescope projects<cr>",
         desc = "Projects", nowait = true, remap = false },
     { "<leader>q", "<cmd>q!<CR>",

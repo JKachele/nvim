@@ -6,5 +6,6 @@
  *Created-------{{TIMESTAMP}}
  ************************************************/
 
-module {{FILE}} ();
+module {{FILE}} (
+);
 endmodule

@@ -9,8 +9,8 @@ vim.cmd "autocmd!"
 vim.cmd "autocmd ColorScheme * highlight FoldColumn guibg=black guifg=#404040"
 vim.cmd "augroup END"
 
-vim.keymap.set('n', 'zR', require('ufo').openAllFolds)
-vim.keymap.set('n', 'zM', require('ufo').closeAllFolds)
+-- vim.keymap.set('n', 'zR', require('ufo').openAllFolds)
+-- vim.keymap.set('n', 'zM', require('ufo').closeAllFolds)
 vim.keymap.set('n', 'zK', function()
     local winid = require('ufo').peakFoldedLinesUnderCursor()
     if not winid then
@@ -54,12 +54,13 @@ require('ufo').setup({
     fold_virt_text_handler = handler,
     open_fold_hl_timeout = 150,
     close_fold_kinds_for_ft = {
-        default = {'imports', 'comment'},
-        json = {'array'},
-        c = {'comment', 'region'}
+        default = {}
+        -- default = {'imports', 'comment'},
+        -- json = {'array'},
+        -- c = {'comment', 'region'}
     },
     close_fold_current_line_for_ft = {
-        default = true,
-        c = false
+        default = false
+        -- c = false
     },
 })

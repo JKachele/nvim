@@ -42,10 +42,8 @@ void part2(struct input input) {
 struct input parseInput(llist *ll) {
         struct input input = {0};
 
-        llNode *current = ll->head;
-        while(current != NULL) {
-                {{CURSOR}}char *str = (char*)current->data;
-                current = current->next;
+        for (llNode *cur = ll->head; cur != NULL; cur = cur->next) {
+                {{CURSOR}}char *str = (char*)cur->data;
         }
 
         return input;

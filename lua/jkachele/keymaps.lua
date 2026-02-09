@@ -47,6 +47,9 @@ keymap("n", "<A-h>", ":BufferLineMovePrev<CR>", opts)
 -- No Highlight
 keymap("n", "<ESC>", ":noh<CR>", opts)
 
+-- Toggle Line Wrap
+keymap("n", "<A-w>", ":set wrap!<CR>", opts)
+
 -- Add new line in normal mode
 keymap("n", "<enter>", "o<esc>", opts)
 keymap("n", "<S-enter>", "O<esc>", opts)

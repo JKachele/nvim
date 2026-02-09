@@ -32,7 +32,7 @@ local options = {
         wrap = true,                             -- display lines as one long line, or true to wrap within screen
         linebreak = true,                        -- companion to wrap, don't split words
         scrolloff = 8,                           -- is one of my fav
-        sidescrolloff = 8,
+        sidescrolloff = 0,
         guifont = "JetBrainsMono Nerd Font:h17",               -- the font used in graphical neovim applications
 }
 
