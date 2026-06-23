@@ -216,6 +216,8 @@ which_key.add({
         { "<leader>tc", group = "C", nowait = true, remap = false },
             { "<leader>tca", "<cmd>TemplateInit c/cAdvent<cr>",
                 desc = "C Advent of Code", nowait = true, remap = false },
+            { "<leader>tci", "<cmd>TemplateInit c/cAdventIntcode<cr>",
+                desc = "C Advent of Code 2019 Intcode", nowait = true, remap = false },
             { "<leader>tch", "<cmd>TemplateInit c/cHeader<cr>",
                 desc = "C Header", nowait = true, remap = false },
             { "<leader>tcl", "<cmd>TemplateInit c/cLib<cr>",

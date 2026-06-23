@@ -71,6 +71,12 @@ lspconfig["clangd"].setup({
     single_file_support = true,
 })
 
+lspconfig["verible"].setup({
+    capabilities = capabilities,
+    on_attach = on_attach,
+    cmd = {'verible-verilog-ls', '--rules_config_search'},
+})
+
 lspconfig["pyright"].setup({
     capabilities = capabilities,
     on_attach = on_attach,

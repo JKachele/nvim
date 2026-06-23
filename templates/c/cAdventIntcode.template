@@ -14,12 +14,15 @@
 #include "../util/linkedlist.h"
 #include "../util/inputFile.h"
 #include "../util/util.h"
+#include "../util/talist.h"
+#include "../util/Intcode2019.h"
 // #include "../lib/tllist.h"
 // #include "../util/vector.h"
 
 #define INPUT_BUFFER_SIZE 16384
 
 struct input {{{CURSOR}}
+        talint64 intcode;
 };
 
 static bool Debug = false;
@@ -32,18 +35,29 @@ void debugp(const char *format, ...) {
 }
 
 void part1(struct input *input) {
+        talint64 intcode = copyIntcode(input->intcode);
+
         printf("Part 1: \n\n");
+        tal_destroy(intcode);
 }
 
 void part2(struct input *input) {
+        talint64 intcode = copyIntcode(input->intcode);
+
         printf("Part 2: \n");
+        tal_destroy(intcode);
 }
 
 struct input parseInput(llist *ll) {
         struct input input = {0};
 
-        for (llNode *cur = ll->head; cur != NULL; cur = cur->next) {
-                char *str = (char*)cur->data;
+        char *str = (char*)ll->head->data;
+
+        char *code = strtok(str, ",");
+        while (code != NULL) {
+                int64 num = strtoll(code, NULL, 10);
+                tal_add(input.intcode, num);
+                code = strtok(NULL, ",");
         }
 
         return input;
@@ -51,16 +65,14 @@ struct input parseInput(llist *ll) {
 
 int main(int argc, char *argv[]) {
         setvbuf(stdout, NULL, _IONBF, 0);
-        printf("*----------------------------------------------------------------*\n");
-        printf("Running Advent of Code {{FILEP}}/{{FILEE}}\n\n");
         clock_t begin = clock();
         llist *ll;
         if (argc > 1 && strcmp(argv[1], "TEST") == 0) {
-                char *file = "assets/tests/{{FILEP}}/{{FILE}}.txt";
+                char *file = "assets/tests/2019/{{FILE}}.txt";
                 ll = getInputFileLen(file, INPUT_BUFFER_SIZE);
                 Debug = true;
         } else {
-                char *file = "assets/inputs/{{FILEP}}/{{FILE}}.txt";
+                char *file = "assets/inputs/2019/{{FILE}}.txt";
                 ll = getInputFileLen(file, INPUT_BUFFER_SIZE);
         }
         // llist_print(ll, printInput);

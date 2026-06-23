@@ -53,5 +53,5 @@ hardtime.setup({
         ["<Left>"] = { "n", "v" },
         ["<Right>"] = { "n", "v" }
     },
-    disabled_filetypes = { "qf", "netrw", "NvimTree", "lazy", "mason", "help", "txt" },
+    disabled_filetypes = { "qf", "netrw", "NvimTree", "lazy", "mason", "help", "text" },
 })
