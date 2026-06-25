@@ -170,7 +170,7 @@ nvim_tree.setup {
                 },
         },
         view = {
-                width = 20,
+                width = 25,
                 -- adaptive_size = true,
                 side = "left",
         },
@@ -181,7 +181,7 @@ nvim_tree.setup {
                 git_clean = false,
                 no_buffer = false,
                 no_bookmark = false,
-                custom = {"bin"},
+                custom = {},
                 exclude = {},
         },
 }

@@ -9,8 +9,8 @@ vim.cmd "autocmd!"
 vim.cmd "autocmd ColorScheme * highlight FoldColumn guibg=black guifg=#404040"
 vim.cmd "augroup END"
 
-vim.keymap.set('n', 'zR', require('ufo').openAllFolds)
-vim.keymap.set('n', 'zM', require('ufo').closeAllFolds)
+-- vim.keymap.set('n', 'zR', require('ufo').openAllFolds)
+-- vim.keymap.set('n', 'zM', require('ufo').closeAllFolds)
 vim.keymap.set('n', 'zK', function()
     local winid = require('ufo').peakFoldedLinesUnderCursor()
     if not winid then

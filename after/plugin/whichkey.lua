@@ -230,6 +230,8 @@ which_key.add({
                 desc = "C++ Advent Of Code", nowait = true, remap = false },
             { "<leader>tpm", "<cmd>TemplateInit cpp/cppMain<cr>",
                 desc = "C++ Main", nowait = true, remap = false },
+        { "<leader>tv", "<cmd>TemplateInit Verilog/Module<cr>",
+            desc = "Verilog Module", nowait = true, remap = false },
 })
 
 -- Add to existing leaders

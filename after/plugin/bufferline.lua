@@ -34,7 +34,7 @@ bufferline.setup {
     -- end,
     max_name_length = 30,
     max_prefix_length = 30, -- prefix used when a buffer is de-duplicated
-    tab_size = 21,
+    tab_size = 10,
     diagnostics = false, -- | "nvim_lsp" | "coc",
     diagnostics_update_in_insert = false,
     -- diagnostics_indicator = function(count, level, diagnostics_dict, context)
@@ -67,7 +67,7 @@ bufferline.setup {
     -- can also be a table containing 2 custom separators
     -- [focused and unfocused]. eg: { '|', '|' }
     separator_style = "thin", -- | "thick" | "thin" | { 'any', 'any' },
-    enforce_regular_tabs = true,
+    enforce_regular_tabs = false,
     always_show_bufferline = true,
     -- sort_by = 'id' | 'extension' | 'relative_directory' | 'directory' | 'tabs' | function(buffer_a, buffer_b)
     --   -- add custom logic

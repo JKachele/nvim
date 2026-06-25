@@ -1,4 +1,3 @@
-package {{PACKAGE}};
 /*************************************************
  *File----------{{FILEE}}
  *Project-------{{PROJECT}}
@@ -7,9 +6,8 @@ package {{PACKAGE}};
  *License-------{{LICENSE}}
  ************************************************/
 
-public class {{FILE}} {
-    public static void main(String[] args) {
+module {{FILE}} (
         {{CURSOR}}
-    }
-}
+);
 
+endmodule
