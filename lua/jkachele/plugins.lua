@@ -12,6 +12,7 @@ if not vim.loop.fs_stat(lazypath) then
         })
 end
 vim.opt.rtp:prepend(lazypath)
+vim.g.copilot_proxy_strict_ssl = false
 
 -- Use a protected call so we don't error out on first use
 local status_ok, lazy = pcall(require, "lazy")
@@ -96,8 +97,11 @@ lazy.setup({
         "L3MON4D3/LuaSnip",                         --snippet engine
         "rafamadriz/friendly-snippets",             -- a bunch of snippets to use
         "saadparwaiz1/cmp_luasnip",                 -- snippet completions
-        { "tzachar/cmp-tabnine",                    -- Tabnine completions
-                build="./install.sh"
+        "zbirenbaum/copilot.lua",
+        { "zbirenbaum/copilot-cmp",
+                config = function ()
+                        require("copilot_cmp").setup()
+                end
         },
 
         -- LSP
@@ -116,9 +120,10 @@ lazy.setup({
 
         -- Treesitter
         { "nvim-treesitter/nvim-treesitter",        -- Better syntax highlighting
+                lazy = false,
                 build = ":TSUpdate",
         },
-        "nvim-treesitter/playground",               -- Easily configure treesitter
+        -- "nvim-treesitter/playground",               -- Easily configure treesitter
 
         -- Git
         { "lewis6991/gitsigns.nvim",                -- Show Git status and changes

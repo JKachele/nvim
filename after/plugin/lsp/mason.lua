@@ -18,7 +18,7 @@ mason_lspconfig.setup({
         -- "pyright",
         -- "jsonls",
         "clangd",
-        "cmake",
+        -- "cmake",
         -- "asm_lsp",
         -- "cmake",
         "arduino_language_server",
