@@ -6,9 +6,9 @@ copilot.setup({
                 keymap = {
                         jump_prev = "[[",
                         jump_next = "]]",
-                        accept = "<CR>",
+                        accept = "<C-]>",
                         refresh = "gr",
-                        open = "<M-CR>"
+                        open = "<M-]>"
                 },
                 layout = {
                         position = "bottom", -- | top | left | right | bottom |
@@ -16,18 +16,18 @@ copilot.setup({
                 },
         },
         suggestion = {
-                enabled = false,
-                auto_trigger = false,
+                enabled = true,
+                auto_trigger = true,
                 hide_during_completion = true,
                 debounce = 15,
                 trigger_on_accept = true,
                 keymap = {
-                        accept = "<M-l>",
-                        accept_word = false,
+                        accept = "<M-CR>",
+                        accept_word = "<M-w>",
                         accept_line = false,
-                        next = "<M-]>",
-                        prev = "<M-[>",
-                        dismiss = "<C-]>",
+                        next = "<Tab>",
+                        prev = "<S-Tab>",
+                        dismiss = "<ESC>",
                         toggle_auto_trigger = false,
                 },
         },
