@@ -2,11 +2,14 @@ local treesitter = require("nvim-treesitter")
 treesitter.install({
         "c",
         "cpp",
+        "make",
         "java",
         "lua",
         "rust",
         "python",
         "bash",
+        "zsh",
+        "markdown",
         "glsl",
         "asm",
         "systemverilog"
